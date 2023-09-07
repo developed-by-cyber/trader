@@ -1,0 +1,6 @@
+.dashboard{
+    display: flex;
+    height: fit-content;
+    background: #0D1C39 !important;
+    position: relative;
+}
