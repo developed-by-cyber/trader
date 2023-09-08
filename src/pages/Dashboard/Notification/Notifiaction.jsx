@@ -26,11 +26,7 @@ const Notifiaction = () => {
   if(details === null){
     return(<></>)
   }
-  // function handleLogout(e){
-  //   e.preventDefault()
-  //   auth.logout()
-  //   navigator('/login')
-  // }
+
   return (
     <>
       <div className="notification">
@@ -39,18 +35,16 @@ const Notifiaction = () => {
             <img crossOrigin="anonymous" src={domain + details.data.photo} alt="profileImg" />
           </Link>
         </div>
+        <Link to="/Dashboard">
         <div className="prof-name">
           <p>
             {details.data.username} <i className="hr"></i>
             {details.data.userVerified?<span>
               Verified <img src={verified} alt="verified" />
             </span>:null}
-            
           </p>
         </div>
-        <Link to="/login" className="logout">
-            <img src={Img9} alt="account" />
-          </Link>
+        </Link>
       </div>
     </>
   );

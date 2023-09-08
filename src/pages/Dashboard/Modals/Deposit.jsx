@@ -1,7 +1,6 @@
 import "./Deposit.css";
 import Close from "../../../assets/close.png";
 import star from "../../../assets/Star 3.png";
-import barcode from "../../../assets/bi_qr-code-scan.png";
 import Warning from "../../../assets/Warning.png";
 import copy from "../../../assets/Copy.png";
 import { ToastContainer, toast } from "react-toastify";
@@ -65,7 +64,7 @@ function Deposit({ setMod, address, network }) {
             </div>
             <div className="network">
               <p>
-                Network <br /> Ethereum({network})
+                Network <br /> <span className="eth">Ethereum({network})</span>
               </p>
               <div className="div">
                 <span>Minimum deposit</span>

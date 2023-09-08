@@ -258,7 +258,7 @@ button {
     height: 20vh;
   }
   div:where(.swal2-container) div:where(.swal2-popup){
-    width: 80% !important;
+    width: 44% !important;
   }
 }
 @media screen and (max-width: 480px) {
@@ -300,7 +300,6 @@ button {
   }
   .Toastify__toast{
     width: 100vw;
-   /* margin-left: 31px !important; */
    right: 0px !important;
   }
   .Toastify__toast-body{

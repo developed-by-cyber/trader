@@ -14,6 +14,9 @@
   animation: pop 0.3s ease-in-out;
   overflow-x: hidden !important;
 }
+.eth{
+  opacity: .5;
+}
 @keyframes pop {
   0%{
     transform: translate(-50%, -50%) scale(0.9);
@@ -104,12 +107,13 @@
   border: none;
   outline: none;
   padding: 0px 15px !important;
-  color: #fff;
+  color: #ffffffea;
   font-family: Gilroy;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: pointer;
 }
 #address{
   padding-right: 70px !important;
@@ -161,9 +165,10 @@
   font-weight: 500;
   line-height: 30px;
   letter-spacing: 0.32px;
+  opacity: .65;
 }
 .modal-wrapper .mod2 .network .div span:first-child {
-  opacity: 0.7;
+  opacity: 0.59;
 }
 @media screen and (max-width: 520px) {
   .mod2 {

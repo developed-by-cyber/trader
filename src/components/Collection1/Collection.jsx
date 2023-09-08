@@ -85,7 +85,7 @@ function Collection() {
           <button onClick={() => {fetchAll()
          togged(1)}} className={toggle === 1 ? "active" : "btn-small"}>All</button>
           <button id="but1" onClick={() => {setDATA(null) 
-           handleCatergory('art') 
+           handleCatergory('arts') 
           togged(2)}} className={toggle === 2 ? "active" : "btn-small"}>Art</button>
           <button  onClick={() => {setDATA(null) 
            handleCatergory('gaming') 
@@ -114,7 +114,7 @@ function Collection() {
           <button onClick={() => {fetchAll()
          togged(1)}} className={toggle === 1 ? "active" : "btn-small"}>All</button>
           <button id="but1" onClick={() => {setDATA(null) 
-           handleCatergory('art') 
+           handleCatergory('arts') 
           togged(2)}} className={toggle === 2 ? "active" : "btn-small"}>Art</button>
           <button  onClick={() => {setDATA(null) 
            handleCatergory('gaming') 

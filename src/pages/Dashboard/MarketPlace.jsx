@@ -7,6 +7,7 @@ import Notifiaction from "./Notification/Notifiaction";
 import Loader from "../../components/loader/Loader";
 import { domain } from "../../config";
 import { BiChevronDown } from "react-icons/bi";
+import icon from "../../assets/fluent-mdl2_navigate-back.png";
 
 function MarketPlace() {
   const [DATA, setDATA] = useState(NFTData);
@@ -50,6 +51,7 @@ function MarketPlace() {
   return (
     <>
       <div className="marketplace">
+        <Link to="/Dashboard"><img className="bac-ar" src={icon} alt="icon" /></Link>
         <Notifiaction />
         <div className="desktop">
           <div className="top">
@@ -113,7 +115,9 @@ function MarketPlace() {
                 color="white"
                 size={"20px"}
               />
-              <span>see more</span>
+              <span>
+                {!show ? "see more" : "see less"}
+              </span>
             </button>
           </div>
 

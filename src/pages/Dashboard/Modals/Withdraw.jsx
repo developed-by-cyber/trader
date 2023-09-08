@@ -84,8 +84,6 @@ function Withdraw({ setMod2,wethBalance,ethBalance,token }) {
             </label>
             <select className="sel">
               <option>WETH (ERC20)</option>
-              <option>ETH (ERC20)</option>
-              <option>WETH (ERC20)</option>
             </select>
 
             <label>

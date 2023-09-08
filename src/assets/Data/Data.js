@@ -363,7 +363,7 @@ export const Uses = [
     id: 2,
     icon: Icon2,
     title: "Add Your NFT’s",
-    dec: "Mint (upload) your wonderful artworks as a non fungible token to the ethereum block chain which ease.",
+    dec: "Mint (upload) your wonderful artworks as a non fungible token to the ethereum block chain with ease.",
   },
   {
     id: 3,

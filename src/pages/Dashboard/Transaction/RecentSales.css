@@ -7,6 +7,9 @@
   overflow-x: auto !important;
   margin-top: 48px !important;
 }
+.nprice{
+  letter-spacing: 1px;
+}
 .RecentSales .p1 {
   color: var(--light-greyscale-white, #fff);
   font-family: Gilroy;

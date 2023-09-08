@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 function Footer() {
   return (
-      <>
+    <>
       <footer>
         <div className="links">
-          <div className="logo" data-aos="fade-down" 
-            data-aos-delay="500">
+          <div className="logo" data-aos="fade-down" data-aos-delay="500">
             <h1>Logo</h1>
             <p>
               The world’s first and largest digital marketplace for crypto
@@ -15,9 +14,8 @@ function Footer() {
             </p>
           </div>
 
-          <div className="link-hold" data-aos="fade-up" 
-            data-aos-delay="600">
-            <div className="link" >
+          <div className="link-hold" data-aos="fade-up" data-aos-delay="600">
+            <div className="link">
               <p>Market Place</p>
               <ul>
                 <li>
@@ -45,22 +43,16 @@ function Footer() {
               <ul>
                 <li>
                   <Link to="/Dashboard/NftProfile">Profile</Link>
-             </li>
-                <li>
-                  <a href="#a">Favourites</a>
                 </li>
                 <li>
-                  <a href="#a">Watch Lists</a>
-                </li>
-                <li>
-                  <a href="#a">Collection</a>
+                  <a href="/Dashboard">Collection</a>
                 </li>
               </ul>
             </div>
             <div className="link link3">
               <ul>
                 <li>
-                  <a href="#a">Privacy Policy</a>
+                  <Link to="/Terms">Privacy Policy</Link>
                 </li>
                 <li>
                   <Link to="/Terms">Terms of Service</Link>
@@ -74,7 +66,8 @@ function Footer() {
       <div className="copyright">
         <p>© 2018 - 2023 Artmint, Inc. All right reserved</p>
         <p className="p2">
-          <a href="#a">Privacy Policy</a> <span>|</span> <Link to="/Terms">Terms of Service</Link>
+          <Link to="/Terms">Privacy Policy</Link> <span>|</span>{" "}
+          <Link to="/Terms">Terms of Service</Link>
         </p>
       </div>
     </>

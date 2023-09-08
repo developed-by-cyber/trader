@@ -56,8 +56,8 @@ const Login = () => {
         }
       })
       .then((user) => {
+        toast.success("Login successful");
         if (user) {
-          toast.success("Login successful");
           navigator("/dashboard");
         }
       });
@@ -90,7 +90,6 @@ const Login = () => {
           />
         </BubblyLink>
         <span data-aos="fade-down" data-aos-delay="200" data-aos-offset="10">
-          {" "}
           Back
         </span>
       </div>

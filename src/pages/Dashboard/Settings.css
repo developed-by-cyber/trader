@@ -6,6 +6,24 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+.toper{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px !important;
+}
+.toper img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px !important;
+  transform: rotateY(180deg);
+}
+.toper span{
+  color: white;
+  font-weight: 600;
+}
 .pp {
   color: #fff;
   font-family: Gilroy;
@@ -13,7 +31,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 30px !important;
 }
 .Settings .settings-hold {
   width: 100%;
@@ -183,8 +200,10 @@
   .Settings .settings-hold .right {
     width: 100%;
   }
-  .pp {
+  .toper{
     margin-bottom: 0px !important;
-    margin-top: 20px !important;
+  }
+  .toper span{
+    display: none;
   }
 }

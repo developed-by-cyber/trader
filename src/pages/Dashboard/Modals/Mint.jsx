@@ -6,7 +6,7 @@ import { FileUploader } from "react-drag-drop-files";
 import Swal from "sweetalert2";
 import { domain } from "../../../config";
 import Successful from "./Successful";
-const fileTypes = ["JPEG", "PNG", "GIF"];
+const fileTypes = ["JPEG", "PNG", "GIF", "JPG"];
 
 function Mint({ setMod }) {
   const userDetails = JSON.parse(localStorage.getItem("user"));
@@ -19,6 +19,7 @@ function Mint({ setMod }) {
   });
   const [success, setSuccess] = useState(false);
   const [successMessage, setSuccesMessage] = useState("");
+      const [Loading, setLoading] = useState(false)
   function turnOff() {
     setSuccess(false);
     setMod(false);
@@ -37,6 +38,7 @@ function Mint({ setMod }) {
   };
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true)
     if (!file) {
       setMod(false);
       return Swal.fire("Opps!", "Image of Nft is required", "error");
@@ -69,6 +71,7 @@ function Mint({ setMod }) {
           } else if (data.status === "success") {
             setSuccess(true);
             setSuccesMessage(data.message);
+            setLoading(false)
           }
         });
     }
@@ -130,7 +133,7 @@ function Mint({ setMod }) {
                     <option value={"gaming"}>Gaming</option>
                     <option value={"pfps"}>pfps</option>
                     <option value={"membership"}>Membership</option>
-                    <option value={"art"}>art</option>
+                    <option value={"arts"}>arts</option>
                   </select>
                 </div>
                 <div className="prices">
@@ -153,10 +156,11 @@ function Mint({ setMod }) {
                 <textarea onChange={handleInput} name="description"></textarea>
               </div>
               <div className="button">
-                <button onClick={handleSubmit} className="bt1">
-                  Mint
+                <button onClick={handleSubmit} className="bt1" disabled={Loading}>
+                  { !Loading ? 'Mint' : <div className="p"><span className="loader"></span><span className="pppp"> Minting...</span></div>}
                 </button>
-                <button className="bt2">Cancel</button>
+                
+                <button onClick={turnOff} className="bt2"> Cancel</button>
               </div>
             </form>
           </div>

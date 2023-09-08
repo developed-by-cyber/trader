@@ -79,7 +79,6 @@
     padding: 0px 20px !important;
     display: flex;
     justify-content: flex-end;
-    padding-right: 30px !important;
   }
   .notification .bell {
     margin-left: auto !important;
@@ -102,12 +101,6 @@
   }
   .notification .prof-name span::before {
     height: 13px;
-  }
-  .notification .logout img{
-    transform: rotateY(180deg);
-    width: 20px;
-    display: block;
-    /* padding-right: 40px !important; */
   }
   
 }
