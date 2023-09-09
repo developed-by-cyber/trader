@@ -218,10 +218,12 @@
   font-size: 12px !important;
   opacity: 0.75;
 }
-.nftcard .bottom .profile .right {
+.nftcard .bottom .right {
   display: flex;
   flex-direction: column;
-  gap: 0.2em !important;
+  /* gap: 0.2em !important; */
+  /* position: relative; */
+  /* background-color: red !important; */
 }
 .nftcard .bottom .name .right p {
   color: #fff;
@@ -234,7 +236,7 @@
   font-family: Gilroy;
   font-size: 10px;
   opacity: 0.75;
-  align-self: flex-end;
+  align-self: end;
 }
 .NftProfile .nftcard .bottom{
   padding-bottom: 0px !important;
