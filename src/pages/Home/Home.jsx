@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import "./Home.css"
 import {
   Collection1,
   Collection2,
@@ -7,6 +8,7 @@ import {
   Header,
   Subscribe,
 } from "../../components";
+import Support from "../Dashboard/Support/Support";
 const Home = () => {
   const exploreRef = useRef(null);
   const worksRef = useRef(null);
@@ -20,6 +22,7 @@ const Home = () => {
 
   return (
     <>
+      <div className="hommy">
       <Header handleEx={handleEx} handleWorks={handleWorks}/>
       <div className="collection-hold">
         <div className="collection-holder">
@@ -31,6 +34,8 @@ const Home = () => {
       </div>
       <Subscribe />
       <Footer />
+      <Support />
+      </div>
     </>
   );
 };

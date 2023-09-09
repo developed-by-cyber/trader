@@ -1,9 +1,11 @@
 import { Navbar } from "../../components";
+import Support from "../Dashboard/Support/Support";
 import "./Terms.css";
 const Terms = () => {
   return (
     <>
       <div className="terms-holder">
+        <Support />
       <div className="wrapper">
             <Navbar />
           </div>
@@ -119,14 +121,13 @@ const Terms = () => {
               <strong>9.1.</strong> These Terms are governed by and construed in
               accordance with the laws of [Your Jurisdiction].
             </p>
-            <p className="pppp">
-        
+            <p className="ps">
                 Please carefully review and accept these terms before using the
                 website. If you do not agree with any part of these terms, you
                 may not use the website.
          
             </p>
-            <p>For any questions or concerns, please contact our support team.</p>
+            <p className="p2">For any questions or concerns, please contact our support team.</p>
           </div>
         </div>
       </div>

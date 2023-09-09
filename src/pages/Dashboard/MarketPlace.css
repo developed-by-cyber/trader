@@ -325,6 +325,14 @@
     row-gap: 25px;
   }
 }
+@media (max-width: 490px) {
+  .marketplace .chatbot-toggler {
+    right: 20px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+  }
+}
 @media screen and (max-width: 480px) {
   .markets{
     display: flex !important;

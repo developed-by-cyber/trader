@@ -158,6 +158,10 @@ button {
   width: 100%;
   overflow: hidden;
 }
+.wwZ {
+  padding: 20px 100px !important;
+  width: 100%;
+}
 .wrapper2 {
   padding: 122px 100px !important;
   width: 100%;
@@ -218,6 +222,9 @@ button {
 
 @media screen and (min-width: 1400px) {
   .wrapper {
+    padding: 20px 150px !important;
+  }
+  .ww {
     padding: 20px 150px !important;
   }
   .collection-holder {

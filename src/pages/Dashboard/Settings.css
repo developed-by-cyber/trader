@@ -140,6 +140,9 @@
   border: none;
   margin-top: 25px !important;
 }
+.toper .logout{
+  display: none;
+}
 @media screen and (max-width: 1115px) {
   .Settings .settings-hold {
     padding: 50px 55px !important;
@@ -211,5 +214,8 @@
   }
   .toper span{
     display: none;
+  }
+  .toper .logout{
+    display: block;
   }
 }

@@ -18,7 +18,7 @@ const Dashboard = ({ setDataFromParent }) => {
         <Notifiaction />
         <Sidebar onDataUpdate={handleChildData} />
         <Outlet />
-        {/* <Support /> */}
+        <Support />
       </div>
     </>
   );

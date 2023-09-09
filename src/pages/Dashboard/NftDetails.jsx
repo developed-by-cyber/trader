@@ -12,6 +12,7 @@ import { domain } from "../../config";
 import Loader from "../../components/loader/Loader";
 import icon from "../../assets/fluent-mdl2_navigate-back.png";
 import Swal from "sweetalert2";
+import Support from "./Support/Support";
 function NftDetails() {
   var settings = {
     dots: false,
@@ -26,37 +27,37 @@ function NftDetails() {
         settings: {
           slidesToShow: 2.5,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1.5,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1.1,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 300,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const userDetails = JSON.parse(localStorage.getItem("user"));
@@ -104,9 +105,14 @@ function NftDetails() {
   return (
     <>
       <div className="details-hold" key={nft.data.id}>
-     <div className="wrapper"> <Link to="/Dashboard"><img className="bac-ar" src={icon} alt="icon" /></Link></div>
+        <div className="wrapper">
+          <Link className="rex" to="/Dashboard">
+            <img className="bac" src={icon} alt="icon" />
+          </Link>
+        </div>
         <Notifiaction />
         <div className="nft-details">
+          <Support />
           <div className="left">
             <img
               className="nft-image"
@@ -126,9 +132,9 @@ function NftDetails() {
             </p>
             <p className="creator">by {nft.data.nftOwner.username}</p>
             <button
-            disabled={Loading}
+              disabled={Loading}
               onClick={() => {
-                setLoading(true)
+                setLoading(true);
                 fetch(`${domain}/api/v1/nft/buyNft/${nft.data.id}`, {
                   method: "POST",
                   headers: {
@@ -141,76 +147,75 @@ function NftDetails() {
                     console.log(data);
                     if (data.status === "fail") {
                       Swal.fire("Opps!", data.message, "error");
-                      setLoading(false)
-                    } else { 
+                      setLoading(false);
+                    } else {
                       setTitle(data.message);
                       setMod4(true);
-                      setLoading(false)
+                      setLoading(false);
                     }
                   });
               }}
             >
-              {!Loading ? 
-              "Buy Now"
-             : 
-              <div className="p">
-                <span className="loader"></span>
-                <span className="pppp">Buying...</span>
-              </div>
-            }
-  
+              {!Loading ? (
+                "Buy Now"
+              ) : (
+                <div className="p">
+                  <span className="loader"></span>
+                  <span className="pppp">Buying...</span>
+                </div>
+              )}
             </button>
           </div>
         </div>
         <div className="more">
           <h3>More on Collection</h3>
           <div className="more-cards">
-           <Slider {...settings}>
-           {categoryNft.data.map((item) => (
-              <div className="nft__card" key={item.id}>
-                <div className="card-hold">
-                  <div className="tops">
-                    <Link to={`/MarketPlace/${item.id}`}>
-                      <img
-                        className="bg"
-                        crossOrigin="anonymous"
-                        src={domain + item.photo}
-                        alt="nftImage"
-                      />
-                    </Link>
-                    <div className="glass">
-                      <p>For Sale</p>
-                    </div>
-                  </div>
-                  <div className="bottom">
-                    <p>
-                      <Link>{item.name}</Link>
-                    </p>
-                    <div className="profile">
-                      <div className="left">
-                        <div className="imgs-hold">
-                          <img
-                            className="pics"
-                            crossOrigin="anonymous"
-                            src={domain + item.nftOwner.photo}
-                            alt="profileImg"
-                          />
-                        </div>
-                        <div className="text">
-                          <p>{item.nftOwner.username}</p>
-                          <span>@{item.nftOwner.username}</span>
-                        </div>
+            <Slider {...settings}>
+              {categoryNft.data.map((item) => (
+                <div className="nft__card" key={item.id}>
+                  <div className="card-hold">
+                    <div className="tops">
+                      <Link to={`/MarketPlace/${item.id}`}>
+                        <img
+                          className="bg"
+                          crossOrigin="anonymous"
+                          src={domain + item.photo}
+                          alt="nftImage"
+                        />
+                      </Link>
+                      <div className="glass">
+                        <p>For Sale</p>
                       </div>
-                      <div className="right">
-                        <span>Current Bid</span>
-                        <p>{item.priceInEtherium}ETH</p>
+                    </div>
+                    <div className="bottom">
+                      <p>
+                        <Link>{item.name}</Link>
+                      </p>
+                      <div className="profile">
+                        <div className="left">
+                          <div className="imgs-hold">
+                            <img
+                              className="pics"
+                              crossOrigin="anonymous"
+                              src={domain + item.nftOwner.photo}
+                              alt="profileImg"
+                            />
+                          </div>
+                          <div className="text">
+                            <p>{item.nftOwner.username}</p>
+                            <span>@{item.nftOwner.username}</span>
+                          </div>
+                        </div>
+                        <div className="right">
+                          <span>Current Bid</span>
+                          <p>{item.priceInEtherium}ETH</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-           </Slider>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
