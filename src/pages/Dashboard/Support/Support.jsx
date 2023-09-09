@@ -2,9 +2,9 @@ import React from "react";
 import "./Support.css";
 import { useState } from "react";
 import imgg from "../../../assets/chat.png";
-// import { TextareaAutosize } from "@mui/base/TextareaAutosize";
 import TextareaAutosize from "react-autosize-textarea";
-// import { styled } from '@mui/system';
+import { BiSolidMessage } from "react-icons/bi"
+import { ImCross } from "react-icons/im"
 
 function Support() {
 
@@ -60,8 +60,8 @@ function Support() {
   return (
     <>
       <button onClick={tog} className="chatbot-toggler">
-        <span className="material-symbols-rounded">mode_comment</span>
-        <span className="material-symbols-outlined">close</span>
+        <span className="material-symbols-rounded"><BiSolidMessage className="ice" /></span>
+        <span className="material-symbols-outlined"><ImCross className="ice2"/></span>
       </button>
       <div className="chatbot">
         <header>
@@ -87,27 +87,8 @@ function Support() {
               How can I help you today?
             </p>
           </li>
-          {/* <li className="chat outgoing">
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </li> */}
         </ul>
         <div className="chat-input">
-          {/* <TextareaAutosize 
-          placeholder="Enter a message..."
-          spellCheck="false"
-          required
-          onChange={hand}
-          maxRows={6}
-          minRows={2}
-        /> */}
-          {/* <TextareaAutosize
-            maxRows={2.5}
-            aria-label="maximum height"
-            placeholder="Enter a message..."
-            spellCheck="false"
-            required
-            onChange={hand}
-          /> */}
           <TextareaAutosize
             style={{ maxHeight: 180, boxSizing: "border-box" }}
             placeholder="Enter a message..."
@@ -116,12 +97,6 @@ function Support() {
             id="texts"
             onChange={hand}
           />
-          {/* <textarea
-            placeholder="Enter a message..."
-            spellCheck="false"
-            required
-            onChange={hand}
-          ></textarea> */}
           <span
             onClick={HandelChat}
             id="send-btn"
