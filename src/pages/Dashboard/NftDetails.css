@@ -37,6 +37,7 @@
 .bac{
   position: absolute;
   top: 60px;
+  z-index: 18;
 }
 
 .nft-details .chatbot{
@@ -224,7 +225,6 @@
   }
   .details-hold .more-cards .nft__card {
     width: 90%;
-    z-index: 5;
   }
   .nft-details .right .nft-name{
     text-transform: capitalize;

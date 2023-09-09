@@ -57,9 +57,11 @@ const Login = () => {
         }
       })
       .then((user) => {
-        toast.success("Login successful");
         setLoading(false);
+        
+        
         if (user) {
+          toast.success("Login successful");
           navigator("/dashboard");
         }
       });
