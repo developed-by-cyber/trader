@@ -1,10 +1,13 @@
-import './loader.css'
+import "./loader.css";
 
-const Loader = ()=>{
-return(
+const Loader = () => {
+  return (
+    <div className="spin">
+      <div class="center-body">
+        <div class="loader-circle-51"></div>
+      </div>
+    </div>
+  );
+};
 
-       <div className='spin'></div>
-)
-}
-
-export default Loader
+export default Loader;
