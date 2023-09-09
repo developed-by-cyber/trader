@@ -6,35 +6,39 @@ import { useState } from "react";
 import { domain } from "../../config";
 import Swal from "sweetalert2";
 function ForgotPassword() {
-  const [input,setInput] = useState('')
-  function handleInput(e){
-   const email = e.target.value
-   setInput(email)
+  const [input, setInput] = useState("");
+  const [Loading, setLoading] = useState(false);
+  function handleInput(e) {
+    const email = e.target.value;
+    setInput(email);
   }
-  function handleSubmit(e){
-    e.preventDefault()
-    if(!input.includes('@') || !input.includes('.')){
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!input.includes("@") || !input.includes(".")) {
       return Swal.fire({
-        icon: 'error',
-        title: 'Please enter a valid email',
-      })
+        icon: "error",
+        title: "Please enter a valid email",
+      });
       //  Swal('Failed!','Please enter a valid email','error')
     }
-  fetch(`${domain}/api/v1/users/forgotPassword`,{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json'
-    },
-    body:JSON.stringify({email:input})
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    if(data.status === 'fail'){
-      return Swal('Failed!',data.message,'error')
-    }else{
-      return Swal('Success',data.message,'success')
-    }
-  })
+    setLoading(true);
+    fetch(`${domain}/api/v1/users/forgotPassword`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: input }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        if (data.status === "fail") {
+          return Swal.fire("Failed!", data.message, "error");
+        } else {
+          return Swal.fire("Success", data.message, "success");
+          setLoading(false);
+        }
+      });
   }
   return (
     <>
@@ -51,8 +55,8 @@ function ForgotPassword() {
               <div data-aos="fade-up" data-aos-delay="50" className="di">
                 <label htmlFor="email">Email</label>
                 <input
-                onChange={handleInput}
-                value={input}
+                  onChange={handleInput}
+                  value={input}
                   className="inputs"
                   type="email"
                   placeholder="Please enter your email address"
@@ -60,13 +64,21 @@ function ForgotPassword() {
                 />
               </div>
               <button
-               onClick={handleSubmit}
+                onClick={handleSubmit}
                 className="bt"
                 data-aos="fade-up"
                 data-aos-delay="80"
                 type="submit"
+                disabled={Loading}
               >
-                Resend mail
+                {!Loading ? (
+                  "Send Mail"
+                ) : (
+                  <div className="p">
+                    <span className="loader"></span>
+                    <span className="pppp"> Sending...</span>
+                  </div>
+                )}
               </button>
               <p data-aos="fade-up" data-aos-delay="100" className="redirect">
                 <img src={ArrowBAck} alt="arrow" /> Back to

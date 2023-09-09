@@ -3,6 +3,7 @@ import Sidebar from "../Dashboard/SideBar/Sidebar";
 import "./Dashboard.css";
 import Notifiaction from "./Notification/Notifiaction";
 import { Outlet } from "react-router-dom";
+import Support from "./Support/Support";
 
 const Dashboard = ({ setDataFromParent }) => {
   const [dataFromChild, setDataFromChild] = useState(null);
@@ -17,6 +18,7 @@ const Dashboard = ({ setDataFromParent }) => {
         <Notifiaction />
         <Sidebar onDataUpdate={handleChildData} />
         <Outlet />
+        {/* <Support /> */}
       </div>
     </>
   );

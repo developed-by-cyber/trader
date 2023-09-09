@@ -85,7 +85,7 @@ function NftProfile() {
                       <p>{Data.name}</p>
                       <div className="right">
                         <span>Current Bid</span>
-                        <p>{Data.priceInEtherium}</p>
+                        <p>{Data.priceInEtherium} ETH</p>
                       </div>
                     </div>
                     <div className="profile">

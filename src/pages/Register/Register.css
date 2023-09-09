@@ -45,6 +45,9 @@
   font-weight: 400;
   line-height: 26px;
 }
+.wrap .center form .bbb:disabled{
+  opacity: 0.7;
+}
 .wrap .bottom .bottom-left a {
   background: var(--linear-color);
   background-clip: text;

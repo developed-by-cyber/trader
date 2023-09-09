@@ -12,12 +12,12 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const Login = () => {
-  
+  const [Loading, setLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-  
+
   const auth = useAuth();
   const navigator = useNavigate();
   const [input, setInput] = useState({
@@ -35,6 +35,7 @@ const Login = () => {
   }
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     fetch(`${domain}/api/v1/users/login`, {
       method: "POST",
       headers: {
@@ -57,13 +58,14 @@ const Login = () => {
       })
       .then((user) => {
         toast.success("Login successful");
+        setLoading(false);
         if (user) {
           navigator("/dashboard");
         }
       });
   }
   return (
-    <div className="wrap">
+    <div className="wrap log">
       <ToastContainer
         theme="dark"
         position="top-right"
@@ -144,8 +146,16 @@ const Login = () => {
             data-aos-delay="80"
             type="submit"
             onClick={handleSubmit}
+            disabled={Loading}
           >
-            Log In
+            {!Loading ? (
+              "Log In"
+            ) : (
+              <div className="p">
+                <span className="loader"></span>
+                <span className="pppp"> Logging In...</span>
+              </div>
+            )}
           </button>
           <p data-aos="fade-up" data-aos-delay="90" className="redirect">
             Don’t have an account?

@@ -29,17 +29,31 @@
   border-radius: 545px;
   opacity: 0.3;
   filter: blur(120px);
+}b
+.details-hold .wrapper{
+  height: fit-content !important;
+  background-color: red !important;
+}
+.bac-ar{
+  position: absolute;
+  top: 60px;
+  backdrop-filter: blur(0) !important;
+  filter: blur(0) !important;
+  z-index: 99999;
 }
 .nft-details {
   position: relative;
   z-index: 5;
   width: 100%;
-  margin-top: 155px !important;
+  margin-top: 115px !important;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 59px;
   margin-bottom: 30px !important;
+}
+.nft-details .loader{
+  right: 30px;
 }
 .nft-details .left {
   width: 40%;
@@ -119,6 +133,9 @@
   font-weight: 500;
   line-height: 24px;
   text-decoration-line: underline;
+}
+.nft-details .right button:disabled{
+  opacity: 0.7;
 }
 .nft-details .right button {
   width: 368px;
@@ -204,10 +221,11 @@
     text-transform: capitalize;
     /* font-size: 25px !important; */
   }
-  .nft-details .right .price1{
-    /* font-size: 35px; */
-  }
+
   .nft-details .right .details{
     width: 100%;
+  }
+  .bac-ar{
+    left: 28px;
   }
 }

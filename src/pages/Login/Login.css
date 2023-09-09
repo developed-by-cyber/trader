@@ -62,6 +62,22 @@
   height: 0.9px;
   background: var(--linear-color);
 }
+.p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Gilroy;
+}
+.pppp{
+  position: absolute;
+  margin-left: 27px !important;
+}
+.log .loader{
+  right: 50px;
+}
+.wrap .center form .bt:disabled{
+  opacity: 0.7;
+}
 .wrap .bottom .bottom-right {
   color: #fff;
   font-family: Gilroy;

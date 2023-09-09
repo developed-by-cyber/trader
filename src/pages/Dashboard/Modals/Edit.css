@@ -11,6 +11,12 @@
   background-color: transparent !important;
   z-index: 5555555;
 }
+.mod3 .loader{
+  right: 30px;
+}
+.mod3 .button .bt1:disabled{
+  opacity: 0.7;
+}
 .mod3 {
   position: fixed;
   top: 50%;
@@ -124,6 +130,9 @@
   height: 40px;
   width: 45%;
   border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mod3 .button .bt2 {
   background-color: transparent;
@@ -132,6 +141,9 @@
   background-clip: content-box, border-box;
   height: 40px;
   width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mod3 .button .bt2::before {
   content: "";
@@ -153,9 +165,6 @@
     height: 100%;
     padding: 45px 20px !important;
   }
-   /* .DashboardHome .nftcard{
-    width: 100%;
-  } */
   .mod3 .button {
     flex-direction: column;
     row-gap: 20px !important;

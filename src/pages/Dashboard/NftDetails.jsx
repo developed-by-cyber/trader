@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import Successful from "./Modals/Successful";
 import { domain } from "../../config";
 import Loader from "../../components/loader/Loader";
+import icon from "../../assets/fluent-mdl2_navigate-back.png";
 import Swal from "sweetalert2";
 function NftDetails() {
   var settings = {
@@ -62,6 +63,7 @@ function NftDetails() {
   const { id } = useParams();
   const [nft, setNft] = useState(null);
   const [title, setTitle] = useState("");
+  const [Loading, setLoading] = useState(false);
   const [categoryNft, setCategoryNft] = useState(null);
   const [price, setPrice] = useState(0);
   useEffect(() => {
@@ -102,6 +104,7 @@ function NftDetails() {
   return (
     <>
       <div className="details-hold" key={nft.data.id}>
+     <div className="wrapper"> <Link to="/Dashboard"><img className="bac-ar" src={icon} alt="icon" /></Link></div>
         <Notifiaction />
         <div className="nft-details">
           <div className="left">
@@ -123,7 +126,9 @@ function NftDetails() {
             </p>
             <p className="creator">by {nft.data.nftOwner.username}</p>
             <button
+            disabled={Loading}
               onClick={() => {
+                setLoading(true)
                 fetch(`${domain}/api/v1/nft/buyNft/${nft.data.id}`, {
                   method: "POST",
                   headers: {
@@ -136,14 +141,24 @@ function NftDetails() {
                     console.log(data);
                     if (data.status === "fail") {
                       Swal.fire("Opps!", data.message, "error");
-                    } else {
+                      setLoading(false)
+                    } else { 
                       setTitle(data.message);
                       setMod4(true);
+                      setLoading(false)
                     }
                   });
               }}
             >
-              Buy Now
+              {!Loading ? 
+              "Buy Now"
+             : 
+              <div className="p">
+                <span className="loader"></span>
+                <span className="pppp">Buying...</span>
+              </div>
+            }
+  
             </button>
           </div>
         </div>
@@ -188,7 +203,7 @@ function NftDetails() {
                       </div>
                       <div className="right">
                         <span>Current Bid</span>
-                        <p>{item.priceInEtherium}</p>
+                        <p>{item.priceInEtherium}ETH</p>
                       </div>
                     </div>
                   </div>

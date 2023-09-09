@@ -9,6 +9,7 @@ function Edit({ setMod3, nft }) {
   const userDetails = JSON.parse(localStorage.getItem("user"));
   const [success, setSuccess] = useState(false);
   const [successMessage, setSuccesMessage] = useState("");
+  const [Loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     pushToMarket: false,
     priceInEtherium: 0,
@@ -107,16 +108,17 @@ function Edit({ setMod3, nft }) {
           <div className="button">
             <button
               className="bt1"
+              disabled={Loading}
               onClick={(e) => {
+                setLoading(true);
                 e.preventDefault();
                 if (input.priceInEtherium < 0.2) {
                   setMod3(false);
                   Swal.fire({
-                    icon: 'error',
-                    title: 'Oops!',
-                    text: 'Nft value must be greater than or equal to 0.2ETH',
-                  })
-                  
+                    icon: "error",
+                    title: "Oops!",
+                    text: "Nft value must be greater than or equal to 0.2ETH",
+                  });
                 } else {
                   fetch(`${domain}/api/v1/nft/${nft.id}`, {
                     method: "PATCH",
@@ -130,17 +132,25 @@ function Edit({ setMod3, nft }) {
                     .then((data) => {
                       if (data.status === "error") {
                         setMod3(false);
-                        return 
-                         Swal.fire("Opps!", data.message, data.status);
+                        return;
+                        Swal.fire("Opps!", data.message, data.status);
                       } else if (data.status === "success") {
                         setSuccess(true);
+                        setLoading(false);
                         setSuccesMessage(data.message);
                       }
                     });
                 }
               }}
             >
-              Update
+              {!Loading ? 
+              "Update"
+             : 
+              <div className="p">
+                <span className="loader"></span>
+                <span className="pppp">Updating...</span>
+              </div>
+            }
             </button>
             <button className="bt2" onClick={turnOff}>
               Cancel

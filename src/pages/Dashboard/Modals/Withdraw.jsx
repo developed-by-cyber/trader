@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { domain } from "../../../config";
 
 function Withdraw({ setMod2,wethBalance,ethBalance,token }) {
+  const [Loading, setLoading] = useState(false);
   const [input,setInput] = useState({
     amount:0,
     address:''
@@ -21,6 +22,7 @@ function Withdraw({ setMod2,wethBalance,ethBalance,token }) {
   }
   function handleSubmit(e){
   e.preventDefault()
+  setLoading(true);
   console.log(input)
   if(input.amount < 0.002){
     setMod2(false)
@@ -46,6 +48,7 @@ function Withdraw({ setMod2,wethBalance,ethBalance,token }) {
     })
     .then(res=>res.json())
     .then(data=>{
+      setLoading(false);
       setMod2(false)
       Swal.fire(data.status==="error"?'Opps!':'Great!',data.message,data.status)
     })
@@ -97,7 +100,16 @@ function Withdraw({ setMod2,wethBalance,ethBalance,token }) {
               Amount
             </label>
             <input onChange={handleInput} type="number" name="amount" value={input.amount} step={0.002} min={0.002} placeholder="Enter your amount" required/>
-            <button onClick={handleSubmit} type="submit">Submit</button>
+            <button onClick={handleSubmit} type="submit" disabled={Loading}>
+            {!Loading ? 
+                  "Submit"
+                :
+                  <div className="p">
+                    <span className="loader"></span>
+                    <span className="pppp"> Submiting...</span>
+                  </div>
+                }
+            </button>
           </form>
         </div>
       </div>

@@ -14,6 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordShown2, setPasswordShown2] = useState(false);
+  const [Loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -38,6 +39,7 @@ const Register = () => {
   }
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     setInputErrors(() => {
       return {
         email: false,
@@ -86,9 +88,10 @@ const Register = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          setLoading(false);
           console.log(data);
           if (data.status !== "success") {
-            return toast.success(data.message);
+            return toast.error(data.message);
           } else {
             auth.verify(data);
             toast.success("Registration Successfully");
@@ -229,8 +232,16 @@ const Register = () => {
             data-aos-delay="90"
             type="submit"
             onClick={handleSubmit}
+            disabled={Loading}
           >
-            Sign Up
+            {!Loading ? (
+              "Sign Up"
+            ) : (
+              <div className="p">
+                <span className="loader"></span>
+                <span className="pppp"> Registering...</span>
+              </div>
+            )}
           </button>
           <p data-aos="fade-up" data-aos-delay="100" className="redirect">
             Don’t have an account?

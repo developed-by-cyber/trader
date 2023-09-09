@@ -1,45 +1,49 @@
 import { Link } from "react-router-dom";
 import "./EmailVerification.css";
+import { useState } from "react";
 import { useAuth } from "../../providers/auth";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { domain } from "../../config";
 
 function EmailVerification() {
-  const user = localStorage.getItem('user')
-  const emailDetails = localStorage.getItem('details')
-  let token ;
-  let email ;
-  if(JSON.parse(user)){
-    email = JSON.parse(user).data.email
-    token = JSON.parse(user).token
-  } else if(JSON.parse(emailDetails)){
-    email = JSON.parse(emailDetails).data.user.email
-    token = JSON.parse(emailDetails).token
-  }else{
-    email = null
-    token = null
+  const user = localStorage.getItem("user");
+  const emailDetails = localStorage.getItem("details");
+  const [Loading, setLoading] = useState(false);
+  let token;
+  let email;
+  if (JSON.parse(user)) {
+    email = JSON.parse(user).data.email;
+    token = JSON.parse(user).token;
+  } else if (JSON.parse(emailDetails)) {
+    email = JSON.parse(emailDetails).data.user.email;
+    token = JSON.parse(emailDetails).token;
+  } else {
+    email = null;
+    token = null;
   }
-  console.log(email,token)
-  function handleSubmit(e){
-    e.preventDefault()
-    if(!JSON.parse(emailDetails)){
-      return toast.error('No email associated with this request')
+  console.log(email, token);
+  function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true)
+    if (!JSON.parse(emailDetails)) {
+      return toast.error("No email associated with this request");
     }
-    fetch(`${domain}/api/v1/users/createEmailToken`,{
-      method:'PATCH',
-      headers:{
-        'Content-Type':'application/json',
-        'Authorization':`Bearer ${token}`
-      }
+    fetch(`${domain}/api/v1/users/createEmailToken`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     })
-    .then(res=>res.json())
-    .then(data=>{
-      toast.success("email sent to this address")
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false)
+        toast.success("email sent to this address");
+      });
   }
   return (
     <>
-     <ToastContainer
+      <ToastContainer
         theme="dark"
         position="top-right"
         autoClose={5000}
@@ -80,8 +84,16 @@ function EmailVerification() {
                 data-aos-delay="90"
                 type="submit"
                 onClick={handleSubmit}
+                disabled={Loading}
               >
-                Resend mail
+                {!Loading ? 
+                  "Send Mail"
+                :
+                  <div className="p">
+                    <span className="loader"></span>
+                    <span className="pppp"> Sending...</span>
+                  </div>
+                }
               </button>
             </form>
           </div>

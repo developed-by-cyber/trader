@@ -8,6 +8,12 @@
   background: #14141fb2;
   z-index: 444444;
 }
+.mod .loader{
+  right: 40px;
+}
+.modal-wrapper .mod form button:disabled{
+  opacity: 0.7;
+}
 .mod {
   position: absolute;
   top: 50%;

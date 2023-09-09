@@ -7,6 +7,7 @@ import { domain } from "../../config";
 import { useAuth } from "../../providers/auth";
 import { useNavigate } from "react-router-dom";
 import Img9 from "../../assets/DashboardImg/logout.png";
+import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 function Settings() {
   const inputRef = useRef(null);
@@ -14,6 +15,7 @@ function Settings() {
   const navigate = useNavigate();
   const userDetails = JSON.parse(localStorage.getItem("user"));
   const [myDetails, setMyDetails] = useState(null);
+  const [Loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     password: "",
     currentPassword: "",
@@ -36,8 +38,8 @@ function Settings() {
         title: "Oops!",
         text: "Passwords do not match",
       });
-      // return swal('Opps!','Passwords do not match','error')
     }
+    setLoading(true)
     fetch(`${domain}/api/v1/users/chaingeMyPassword`, {
       method: "PATCH",
       headers: {
@@ -49,12 +51,12 @@ function Settings() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setLoading(false)
         Swal.fire({
           icon: "success",
           title: "Great!",
           text: "Password Reset Successful",
         });
-        // swal('Great!','Password Reset Successful','success')
         localStorage.clear();
         navigate("/login");
       });
@@ -100,7 +102,6 @@ function Settings() {
             title: "Opps!",
             text: "Update failed",
           });
-          // swal('Opps!','Update failed','error')
         } else {
           setImage(file);
           Swal.fire({
@@ -108,7 +109,6 @@ function Settings() {
             title: "Great!",
             text: "Profile updated",
           });
-          // swal('Great!','Profile updated','success')
         }
       });
   };
@@ -116,6 +116,15 @@ function Settings() {
   return (
     <>
       <div className="Settings">
+      <ToastContainer
+        theme="dark"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+      />
         <div className="toper">
           <p className="pp">Settings</p>
           <Link to="/Login" className="logout">
@@ -186,7 +195,18 @@ function Settings() {
                 type="password"
                 placeholder="Confirm Password"
               />
-              <button onClick={handleSubmit}>Change Password</button>
+              <button 
+              disabled={Loading}
+              onClick={handleSubmit}>
+              {!Loading ? 
+                  "Change Password"
+                :
+                  <div className="p">
+                    <span className="loader"></span>
+                    <span className="pppp"> Updating...</span>
+                  </div>
+                }
+              </button>
             </div>
           </div>
         </div>

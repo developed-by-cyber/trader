@@ -8,7 +8,7 @@ function Footer() {
           <div className="logo" data-aos="fade-down" data-aos-delay="500">
             <h1>Logo</h1>
             <p>
-              The world’s first and largest digital marketplace for crypto
+              The world’s best and largest digital marketplace for crypto
               collectibles and non-fungible tokens (NFTs). Buy, sell, and
               discover exclusive digital items.
             </p>

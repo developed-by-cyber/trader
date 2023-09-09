@@ -19,7 +19,7 @@ function Mint({ setMod }) {
   });
   const [success, setSuccess] = useState(false);
   const [successMessage, setSuccesMessage] = useState("");
-      const [Loading, setLoading] = useState(false)
+  const [Loading, setLoading] = useState(false);
   function turnOff() {
     setSuccess(false);
     setMod(false);
@@ -38,17 +38,17 @@ function Mint({ setMod }) {
   };
   function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     if (!file) {
       setMod(false);
       return Swal.fire("Opps!", "Image of Nft is required", "error");
     } else if (input.priceInEtherium < 0.2) {
       setMod(false);
       return Swal.fire({
-        icon: 'error',
-        title: 'Oops!',
-        text: 'A feasible price value greater than 0.02 is required',
-      })
+        icon: "error",
+        title: "Oops!",
+        text: "A feasible price value greater than 0.02 is required",
+      });
     } else {
       const data = new FormData();
       data.append("photo", file[0]);
@@ -71,7 +71,7 @@ function Mint({ setMod }) {
           } else if (data.status === "success") {
             setSuccess(true);
             setSuccesMessage(data.message);
-            setLoading(false)
+            setLoading(false);
           }
         });
     }
@@ -156,11 +156,24 @@ function Mint({ setMod }) {
                 <textarea onChange={handleInput} name="description"></textarea>
               </div>
               <div className="button">
-                <button onClick={handleSubmit} className="bt1" disabled={Loading}>
-                  { !Loading ? 'Mint' : <div className="p"><span className="loader"></span><span className="pppp"> Minting...</span></div>}
+                <button
+                  onClick={handleSubmit}
+                  className="bt1"
+                  disabled={Loading}
+                >
+                  {!Loading ? (
+                    "Mint"
+                  ) : (
+                    <div className="p">
+                      <span className="loader"></span>
+                      <span className="pppp"> Minting...</span>
+                    </div>
+                  )}
                 </button>
-                
-                <button onClick={turnOff} className="bt2"> Cancel</button>
+
+                <button onClick={turnOff} className="bt2">
+                  Cancel
+                </button>
               </div>
             </form>
           </div>

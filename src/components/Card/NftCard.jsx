@@ -26,7 +26,7 @@ function Nft__Card(props) {
               </div>
               <div className="right">
                 <span>Current Bid</span>
-                <p>{props.item.priceInEtherium}</p>
+                <p>{props.item.priceInEtherium}ETH</p>
               </div>
             </div>
           </div>
