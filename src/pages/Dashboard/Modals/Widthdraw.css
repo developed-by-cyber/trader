@@ -209,7 +209,7 @@
 @media screen and (max-width: 520px) {
   .mod {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     padding: 70px 20px !important;
   }
   .modal-wrapper .mod .wallet {
