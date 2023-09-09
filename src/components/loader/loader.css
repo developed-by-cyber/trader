@@ -37,6 +37,6 @@
   }
   @media screen and (max-width: 480px) {
     .spin::before{
-      margin-top: -50px !important;
+      margin-top: -40px !important;
     }
   }

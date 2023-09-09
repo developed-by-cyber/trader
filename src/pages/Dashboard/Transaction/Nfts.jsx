@@ -59,7 +59,7 @@ function Nfts({userNft}) {
                   </div>
                   <div className="right">
                     <span>Current Bid</span>
-                    <p>{Data.priceInEtherium}zz</p>
+                    <p>{Data.priceInEtherium} ETH</p>
                   </div>
                 </div>
               </div>
