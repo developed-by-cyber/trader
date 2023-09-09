@@ -30,6 +30,7 @@ th,
 thead,
 tr {
   padding: 20px 36px !important;
+  white-space: nowrap !important;
 }
 .RecentSales table {
   overflow-x: auto !important;
