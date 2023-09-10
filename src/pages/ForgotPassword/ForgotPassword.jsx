@@ -82,8 +82,8 @@ function ForgotPassword() {
               </button>
               <p data-aos="fade-up" data-aos-delay="100" className="redirect">
                 <img src={ArrowBAck} alt="arrow" /> Back to
-                <span className="link">
-                  <BubblyLink to="/Login">Log In</BubblyLink>
+                <span className="linker">
+                  <BubblyLink className="linker" to="/Login"><a>Log In</a> </BubblyLink>
                 </span>
               </p>
             </form>

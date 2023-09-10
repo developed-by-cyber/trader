@@ -4,7 +4,10 @@ import edit from "../../../assets/DashboardImg/edit.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Edit from "../Modals/Edit";
+
 import { domain } from "../../../config";
+import Edtt from "../Modals/Edtt";
+import Depo from "../Modals/Depo";
 
 function Nfts({userNft}) {
   const [nft, setNft] = useState(null) 
@@ -40,7 +43,9 @@ function Nfts({userNft}) {
                     alt="edit"
                     value={index}
                   />
-                  {Mod3 && <Edit setMod3={setMod3} nft={nft}/>}
+                  {/* {Mod3 && <Edit setMod3={setMod3} nft={nft}/>} */}
+                  {Mod3 && <Depo setMod3={setMod3} nft={nft}/>}
+                  
                 </div>
                 <div className="profile">
                   <div className="left">

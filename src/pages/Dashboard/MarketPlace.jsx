@@ -9,6 +9,7 @@ import { domain } from "../../config";
 import { BiChevronDown } from "react-icons/bi";
 import icon from "../../assets/fluent-mdl2_navigate-back.png";
 import Support from "./Support/Support";
+import HeroLoader from "../../components/loader/heroloader";
 
 function MarketPlace() {
   const [DATA, setDATA] = useState(NFTData);

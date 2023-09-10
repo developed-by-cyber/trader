@@ -63,10 +63,14 @@ tr {
 }
 .RecentSales .heading {
   background: var(--linear-color);
+  border: 0 !important;
   border-radius: 4px !important;
 }
+.RecentSales .heading th{
+  border: 0 !important;
+}
 .RecentSales .tables .heading {
-  background: var(--linear-color);
+  /* background: var(--linear-color); */
   border-radius: 4px !important;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
