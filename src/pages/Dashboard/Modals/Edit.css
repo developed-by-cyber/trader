@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background: #14141f1c;
-  z-index: 444444;
+  z-index: 444;
 }
 /* .mods .modss{
   background-color: transparent !important;
@@ -24,23 +24,23 @@
   transform: translate(-50%, -50%);
   background: #0d1c39;
   border-radius: 5px;
-  z-index: 555555;
+  z-index: 555;
   width: 350px;
   height: 92%;
   overflow: auto !important;
   padding: 45px 35px !important;
   padding-bottom: 70px !important;
   overflow-x: hidden !important;
-  /* animation: pop 0.3s ease-in-out; */
+  animation: pops 0.3s ease-in-out;
 }
-/* @keyframes pop {
+@keyframes pops {
   0%{
     transform: translate(-50%, -50%) scale(0.9);
   }
   100%{
     transform: translate(-50%, -50%) scale(1);
   }
-} */
+}
 .mod3 .mod3-card {
   width: 100%;
   display: flex;
