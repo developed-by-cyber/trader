@@ -202,6 +202,9 @@
   mask-composite: exclude;
 }
 @media screen and (max-width: 480px) {
+  .mod-wrapper{
+    display: none;
+  }
   .mod3 {
     width: 100%;
     height: 100%;
