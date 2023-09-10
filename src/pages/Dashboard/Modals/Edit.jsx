@@ -54,7 +54,7 @@ function Edit({ setMod3, nft }) {
           <div className="mod3-card">
             <div className="nftcard" key={nft.id}>
               <div className="card-hold">
-                {/* <div className="tops">
+                <div className="tops">
                   <img
                     className="bg"
                     crossOrigin="anonymous"
@@ -64,7 +64,7 @@ function Edit({ setMod3, nft }) {
                   <div className="glass">
                     <p>For Sale</p>
                   </div>
-                </div> */}
+                </div>
                 <div className="bottom">
                   <div className="name">
                     <p>{nft.name}</p>
