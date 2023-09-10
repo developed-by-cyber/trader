@@ -50,7 +50,7 @@ function Edit({ setMod3, nft }) {
             <img onClick={() => setMod3(false)} src={Close} alt="close" />
           </div>
 
-          <div className="mod3-card">
+          {/* <div className="mod3-card">
             <div className="nftcard" key={nft.id}>
               <div className="card-hold">
                 <div className="tops">
@@ -80,21 +80,11 @@ function Edit({ setMod3, nft }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="push">
             <button className="bt1">Push to market</button>
             <button className="bt2">Pull From market</button>
-            {/* <p>Push to market</p>
-
-            <div className="form-check form-switch form-switch-sm">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckChecked"
-                onChange={handleChange}
-              />
-            </div> */}
           </div>
           <div className="prices">
             <h5>Edit Price</h5>
@@ -108,7 +98,7 @@ function Edit({ setMod3, nft }) {
               onChange={handleInput}
             />
           </div>
-          <div className="button">
+          {/* <div className="button">
             <button
               className="bt1"
               disabled={Loading}
@@ -146,19 +136,19 @@ function Edit({ setMod3, nft }) {
                 }
               }}
             >
-              {!Loading ? 
-              "Update Price"
-             : 
-              <div className="p">
-                <span className="loader"></span>
-                <span className="pppp">Updating...</span>
-              </div>
-            }
+              {!Loading ? (
+                "Update Price"
+              ) : (
+                <div className="p">
+                  <span className="loader"></span>
+                  <span className="pppp">Updating...</span>
+                </div>
+              )}
             </button>
             <button className="bt2" onClick={turnOff}>
               Cancel
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
