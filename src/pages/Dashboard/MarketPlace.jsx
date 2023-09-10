@@ -154,7 +154,7 @@ function MarketPlace() {
           <button
             id="but1"
             onClick={() => {
-              handleCatergory("art");
+              handleCatergory("arts");
               togged(2);
             }}
             className={toggle === 2 ? "active" : "btn-small"}

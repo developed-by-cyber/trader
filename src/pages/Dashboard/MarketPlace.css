@@ -181,6 +181,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin-top: 80px !important;
+  z-index: 5;
+  position: relative;
 }
 .marketplace .topp button.active {
   background: var(--linear-color);
