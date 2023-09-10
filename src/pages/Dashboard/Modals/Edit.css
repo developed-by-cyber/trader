@@ -7,10 +7,10 @@
   background: #14141f1c;
   z-index: 444444;
 }
-.mods .modss{
+/* .mods .modss{
   background-color: transparent !important;
   z-index: 5555555;
-}
+} */
 .mod3 .loader{
   right: 30px;
 }
@@ -31,16 +31,16 @@
   padding: 45px 35px !important;
   padding-bottom: 70px !important;
   overflow-x: hidden !important;
-  animation: pop 0.3s ease-in-out;
+  /* animation: pop 0.3s ease-in-out; */
 }
-@keyframes pop {
+/* @keyframes pop {
   0%{
     transform: translate(-50%, -50%) scale(0.9);
   }
   100%{
     transform: translate(-50%, -50%) scale(1);
   }
-}
+} */
 .mod3 .mod3-card {
   width: 100%;
   display: flex;

@@ -38,10 +38,11 @@ function Edit({ setMod3, nft }) {
   }
   return (
     <>
-      <div className="mod-wrapper mods">
+      <div className="mod-wrapper">
         {success ? (
           <Successful title={successMessage} turnOff={turnOff} />
         ) : null}
+        
         <div className="mod3">
           <div className="top d-flex justify-content-between align-nfts-center">
             <div className="left">
@@ -50,7 +51,7 @@ function Edit({ setMod3, nft }) {
             <img onClick={() => setMod3(false)} src={Close} alt="close" />
           </div>
 
-          {/* <div className="mod3-card">
+          <div className="mod3-card">
             <div className="nftcard" key={nft.id}>
               <div className="card-hold">
                 <div className="tops">
@@ -80,7 +81,7 @@ function Edit({ setMod3, nft }) {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className="push">
             <button className="bt1">Push to market</button>
@@ -98,7 +99,7 @@ function Edit({ setMod3, nft }) {
               onChange={handleInput}
             />
           </div>
-          {/* <div className="button">
+          <div className="button">
             <button
               className="bt1"
               disabled={Loading}
@@ -148,7 +149,7 @@ function Edit({ setMod3, nft }) {
             <button className="bt2" onClick={turnOff}>
               Cancel
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
