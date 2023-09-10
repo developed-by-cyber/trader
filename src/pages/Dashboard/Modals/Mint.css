@@ -25,7 +25,7 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   scale: 35%;
-  right: 22px;
+  right: 27px;
 }
 .loader::after,
 .loader::before {

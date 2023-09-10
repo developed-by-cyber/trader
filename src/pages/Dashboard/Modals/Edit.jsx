@@ -69,7 +69,7 @@ function Edit({ setMod3, nft }) {
                     <p>{nft.name}</p>
                     <div className="right">
                       <span>Current Bid</span>
-                      <p>{nft.priceInEtherium}</p>
+                      <p>{nft.priceInEtherium} ETH</p>
                     </div>
                   </div>
                   <div className="profile">
@@ -83,7 +83,9 @@ function Edit({ setMod3, nft }) {
           </div>
 
           <div className="push">
-            <p>Push to market</p>
+            <button className="bt1">Push to market</button>
+            <button className="bt2">Pull From market</button>
+            {/* <p>Push to market</p>
 
             <div className="form-check form-switch form-switch-sm">
               <input
@@ -92,11 +94,12 @@ function Edit({ setMod3, nft }) {
                 id="flexSwitchCheckChecked"
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
           </div>
           <div className="prices">
+            <h5>Edit Price</h5>
             <span>Current Price</span>
-            <div className="current">{nft.priceInEtherium}ETH</div>
+            <div className="current">{nft.priceInEtherium} ETH</div>
             <span>New Price</span>
             <input
               type="text"
@@ -144,7 +147,7 @@ function Edit({ setMod3, nft }) {
               }}
             >
               {!Loading ? 
-              "Update"
+              "Update Price"
              : 
               <div className="p">
                 <span className="loader"></span>

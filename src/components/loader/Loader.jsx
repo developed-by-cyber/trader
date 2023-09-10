@@ -3,9 +3,10 @@ import "./loader.css";
 const Loader = () => {
   return (
     <div className="spin">
-      <div class="center-body">
+        <span className="loaders"></span>
+      {/* <div class="center-body">
         <div class="loader-circle-51"></div>
-      </div>
+      </div> */}
     </div>
   );
 };
