@@ -203,7 +203,7 @@
 }
 @media screen and (max-width: 480px) {
   .mod-wrapper{
-    display: none;
+    background-color: transparent !important;
   }
   .mod3 {
     width: 100%;
