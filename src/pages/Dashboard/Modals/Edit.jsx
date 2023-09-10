@@ -38,7 +38,7 @@ function Edit({ setMod3, nft }) {
   }
   return (
     <>
-      <div className="mod-wrapper">
+      <div className="mod-wrapper modz">
         {success ? (
           <Successful title={successMessage} turnOff={turnOff} />
         ) : null}
@@ -46,7 +46,7 @@ function Edit({ setMod3, nft }) {
         <div className="mod3">
           <div className="top d-flex justify-content-between align-nfts-center">
             <div className="left">
-              <p>Edit</p>
+              <p className="text-white">Edit</p>
             </div>
             <img onClick={() => setMod3(false)} src={Close} alt="close" />
           </div>

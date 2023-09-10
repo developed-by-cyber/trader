@@ -14,7 +14,9 @@ function Nfts({userNft}) {
   const [Mod3, setMod3] = useState(false);
   const userDetails = JSON.parse(localStorage.getItem('user'))
   return (
+    
     <div className="nfts">
+      {Mod3 && <Edit setMod3={setMod3} nft={nft}/>}
       <p className="heading">NFT's</p>
       <div className="nft-hold">
         {userNft.length === 0?<h2 className="text-info">No Available Nfts!</h2>:null}
@@ -44,7 +46,7 @@ function Nfts({userNft}) {
                     value={index}
                   />
                   {/* {Mod3 && <Edit setMod3={setMod3} nft={nft}/>} */}
-                  {Mod3 && <Depo setMod3={setMod3} nft={nft}/>}
+                  
                   
                 </div>
                 <div className="profile">

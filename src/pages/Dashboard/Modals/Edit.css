@@ -4,13 +4,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #14141f1c;
-  z-index: 444;
+  background: #14141f1c !important;
+  z-index: 444444;
 }
-/* .mods .modss{
+.modz{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  #14141fb0 !important;
+  z-index: 444444;
+}
+.modz .modss{
   background-color: transparent !important;
   z-index: 5555555;
-} */
+}
 .mod3 .loader{
   right: 30px;
 }
@@ -24,16 +33,16 @@
   transform: translate(-50%, -50%);
   background: #0d1c39;
   border-radius: 5px;
-  z-index: 555;
+  z-index: 555555;
   width: 350px;
   height: 92%;
   overflow: auto !important;
   padding: 45px 35px !important;
   padding-bottom: 70px !important;
   overflow-x: hidden !important;
-  animation: pops 0.3s ease-in-out;
+  animation: pop 0.3s ease-in-out;
 }
-@keyframes pops {
+@keyframes pop {
   0%{
     transform: translate(-50%, -50%) scale(0.9);
   }
@@ -202,9 +211,6 @@
   mask-composite: exclude;
 }
 @media screen and (max-width: 480px) {
-  .mod-wrapper{
-    background-color: transparent !important;
-  }
   .mod3 {
     width: 100%;
     height: 100%;
