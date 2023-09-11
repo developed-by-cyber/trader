@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Notifiaction from "./Notification/Notifiaction";
 import Loader from "../../components/loader/Loader";
 import { domain } from "../../config";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import icon from "../../assets/fluent-mdl2_navigate-back.png";
 import Support from "./Support/Support";
 import HeroLoader from "../../components/loader/heroloader";
@@ -112,7 +112,7 @@ function MarketPlace() {
               {show ? text : `${text.substring(0, 185)}`}
             </p>
             <button onClick={() => setShow(!show)}>
-              <BiChevronDown
+              <BiChevronUp
                 className="chev"
                 style={{ rotate: !show ? "180deg" : "0deg" }}
                 color="white"
