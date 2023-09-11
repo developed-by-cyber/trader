@@ -62,7 +62,8 @@ tr {
   height: fit-content;
 }
 .RecentTransaction .heading {
-  background: var(--linear-color);
+  background: #2D74B9;
+  border: 0 !important;
   border-radius: 4px !important;
 }
 .RecentTransaction .tables .heading {

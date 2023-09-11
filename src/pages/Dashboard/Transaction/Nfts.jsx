@@ -6,8 +6,6 @@ import { useState } from "react";
 import Edit from "../Modals/Edit";
 
 import { domain } from "../../../config";
-import Edtt from "../Modals/Edtt";
-import Depo from "../Modals/Depo";
 
 function Nfts({userNft}) {
   const [nft, setNft] = useState(null) 
